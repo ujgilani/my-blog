@@ -60,6 +60,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ad Section Below Hero */}
+      <section className="py-8 bg-gray-100 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-gray-600">[Ad Placeholder] Your Ad Here</p>
+        </div>
+      </section>
+
       {/* Problem Statement */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4">
@@ -83,6 +90,13 @@ export default function Home() {
               <p className="text-gray-600">You know you should invest, but don&apos;t know where to start</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Ad Section Between Problem Statement and Latest Articles */}
+      <section className="py-8 bg-gray-100 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-gray-600">[Ad Placeholder] Your Ad Here</p>
         </div>
       </section>
 
@@ -151,6 +165,13 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Ad Section Above Footer */}
+      <section className="py-8 bg-gray-100 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-gray-600">[Ad Placeholder] Your Ad Here</p>
         </div>
       </section>
 
