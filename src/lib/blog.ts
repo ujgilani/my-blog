@@ -37,42 +37,48 @@ export interface BlogPostPreview {
 }
 
 export function getSortedPostsData(): BlogPostPreview[] {
-  // Get file names under /content/blog
-  const fileNames = fs.readdirSync(postsDirectory)
-  
-  const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get slug
-    const slug = fileName.replace(/\.md$/, '')
+  try {
+    // Get file names under /content/blog
+    const fileNames = fs.readdirSync(postsDirectory);
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const allPostsData = fileNames.map((fileName) => {
+      // Remove ".md" from file name to get slug
+      const slug = fileName.replace(/\.md$/, "");
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents)
-    
-    // Calculate reading time
-    const readingTimeResult = readingTime(matterResult.content)
-    
-    // Create excerpt from content (first 200 characters)
-    const excerpt = matterResult.content.replace(/[#*`]/g, '').substring(0, 200) + '...'
+      // Read markdown file as string
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    return {
-      slug,
-      excerpt,
-      readTime: readingTimeResult.text,
-      ...(matterResult.data as Omit<BlogPostPreview, 'slug' | 'excerpt' | 'readTime'>)
-    }
-  })
+      // Use gray-matter to parse the post metadata section
+      const matterResult = matter(fileContents);
 
-  // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
+      // Calculate reading time
+      const readingTimeResult = readingTime(matterResult.content);
+
+      // Create excerpt from content (first 200 characters)
+      const excerpt =
+        matterResult.content.replace(/[#*`]/g, "").substring(0, 200) + "...";
+
+      return {
+        slug,
+        excerpt,
+        readTime: readingTimeResult.text,
+        ...(matterResult.data as Omit<BlogPostPreview, "slug" | "excerpt" | "readTime">),
+      };
+    });
+
+    // Sort posts by date
+    return allPostsData.sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return []; // Return an empty array as a fallback
+  }
 }
 
 export async function getPostData(slug: string): Promise<BlogPost> {

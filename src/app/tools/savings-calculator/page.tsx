@@ -1,7 +1,9 @@
-import React, { Suspense } from 'react'
-import dynamic from 'next/dynamic'
+"use client";
 
-const CalculatorClient = dynamic(() => import('./CalculatorClient'), { ssr: false })
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+const CalculatorClient = dynamic(() => import('./CalculatorClient'), { ssr: false });
 
 export default function Page() {
   return (
@@ -14,5 +16,5 @@ export default function Page() {
         </Suspense>
       </div>
     </div>
-  )
+  );
 }

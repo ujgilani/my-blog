@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function CalculatorClient() {
-  const [monthly, setMonthly] = useState<number | ''>('')
-  const [months, setMonths] = useState<number>(3)
-  const [current, setCurrent] = useState<number | ''>('')
+  const [monthly, setMonthly] = useState<number | "">("");
+  const [months, setMonths] = useState<number>(3);
+  const [current, setCurrent] = useState<number | "">("");
 
-  const parse = (v: number | '') => (typeof v === 'number' ? v : 0)
-  const target = parse(monthly) * months
-  const needed = Math.max(0, target - parse(current))
-  const perMonth = Math.ceil(needed / Math.max(1, months))
-  const perWeek = Math.ceil(perMonth / 4)
+  const parse = (v: number | "") => (typeof v === "number" ? v : 0);
+  const target = parse(monthly) * months;
+  const needed = Math.max(0, target - parse(current));
+  const perMonth = Math.ceil(needed / Math.max(1, months));
+  const perWeek = Math.ceil(perMonth / 4);
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow">
@@ -23,8 +23,8 @@ export default function CalculatorClient() {
           <span className="text-sm text-gray-700">Your essential monthly expenses ($)</span>
           <input
             type="number"
-            value={monthly as any}
-            onChange={(e) => setMonthly(e.target.value === '' ? '' : Number(e.target.value))}
+            value={monthly}
+            onChange={(e) => setMonthly(e.target.value === "" ? "" : Number(e.target.value))}
             className="mt-1 p-2 border rounded"
             placeholder="e.g. 2300"
           />
@@ -44,8 +44,8 @@ export default function CalculatorClient() {
           <span className="text-sm text-gray-700">Current savings for emergencies ($)</span>
           <input
             type="number"
-            value={current as any}
-            onChange={(e) => setCurrent(e.target.value === '' ? '' : Number(e.target.value))}
+            value={current}
+            onChange={(e) => setCurrent(e.target.value === "" ? "" : Number(e.target.value))}
             className="mt-1 p-2 border rounded"
             placeholder="e.g. 400"
           />
@@ -62,12 +62,12 @@ export default function CalculatorClient() {
       <div className="mt-4 flex gap-2">
         <a href="/worksheets/emergency-fund-worksheet.csv" className="inline-block bg-blue-600 text-white px-4 py-2 rounded">Download Worksheet</a>
         <button
-          onClick={() => { setMonthly(''); setMonths(3); setCurrent('') }}
+          onClick={() => { setMonthly(""); setMonths(3); setCurrent(""); }}
           className="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded"
         >
           Reset
         </button>
       </div>
     </div>
-  )
+  );
 }
