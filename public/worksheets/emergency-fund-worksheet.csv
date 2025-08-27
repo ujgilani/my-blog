@@ -1,0 +1,13 @@
+Item,Monthly Amount (USD)
+Rent/Mortgage,1200
+Utilities + Phone,200
+Groceries,400
+Insurance + Meds,150
+Transport,150
+Minimum Debt Payments,200
+
+# Instructions
+# 1) Fill in your actual monthly amounts.
+# 2) Sum the "Monthly Amount" column to get your bare-bones monthly number.
+# 3) Multiply by 3 (or 6) to set your emergency fund goal.
+# 4) Use the Savings Calculator at /tools/savings-calculator to plan contributions.

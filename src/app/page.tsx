@@ -17,11 +17,11 @@ export default function Home() {
               <span className="text-xl font-bold text-gray-800">Smart Money Moves</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <Link href="#" className="text-gray-700 hover:text-blue-600 transition">Start Here</Link>
-              <Link href="/blog" className="text-gray-700 hover:text-blue-600 transition">Blog</Link>
-              <Link href="#" className="text-gray-700 hover:text-blue-600 transition">Budget Tools</Link>
-              <Link href="#" className="text-gray-700 hover:text-blue-600 transition">Debt Calculator</Link>
-              <Link href="#" className="text-gray-700 hover:text-blue-600 transition">Contact</Link>
+              <Link href="#" className="text-blue-600 hover:text-black transition">Start Here</Link>
+              <Link href="/blog" className="text-blue-600 hover:text-black transition">Blog</Link>
+              <Link href="#" className="text-blue-600 hover:text-black transition">Budget Tools</Link>
+              <Link href="#" className="text-blue-600 hover:text-black transition">Debt Calculator</Link>
+              <Link href="#" className="text-blue-600 hover:text-black transition">Contact</Link>
             </div>
             <button className="md:hidden">
               <div className="w-6 h-6 flex flex-col justify-center items-center">
@@ -50,9 +50,12 @@ export default function Home() {
             >
               Start with Our Budget Guide
             </Link>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition">
+            <Link
+              href="/quiz"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition"
+            >
               Take Financial Quiz
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -66,17 +69,17 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
               <div className="text-4xl text-red-500 mb-4">💳</div>
-              <h3 className="text-xl font-semibold mb-3">Drowning in Debt</h3>
-              <p className="text-gray-600">Credit cards, student loans, mortgage - it feels like you&apos;ll never be free</p>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">Drowning in Debt</h3>
+              <p className="text-gray-700">Credit cards, student loans, mortgage - it feels like you&apos;ll never be free</p>
             </div>
-            <div className="text-center">
+            <Link href="/no-emergency-fund" className="text-center">
               <div className="text-4xl text-orange-500 mb-4">🐷</div>
-              <h3 className="text-xl font-semibold mb-3">No Emergency Fund</h3>
-              <p className="text-gray-600">Living paycheck to paycheck with nothing saved for unexpected expenses</p>
-            </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">No Emergency Fund</h3>
+              <p className="text-gray-700">Living paycheck to paycheck with nothing saved for unexpected expenses</p>
+            </Link>
             <div className="text-center">
               <div className="text-4xl text-blue-500 mb-4">📊</div>
-              <h3 className="text-xl font-semibold mb-3">Retirement Worries</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">Retirement Worries</h3>
               <p className="text-gray-600">You know you should invest, but don&apos;t know where to start</p>
             </div>
           </div>
@@ -108,18 +111,18 @@ export default function Home() {
                     {post.category.toUpperCase()}
                   </div>
                   <h3 className="text-xl font-bold mb-3">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-blue-600 transition">
+                    <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:text-black transition">
                       {post.title}
                     </Link>
                   </h3>
                   <p className="text-gray-600 mb-4">{post.description}</p>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <span className="mr-4">⏱️ {post.readTime}</span>
+                  <div className="flex items-center text-xs text-gray-600">
+                    <span className="mr-3">⏱️ {post.readTime}</span>
                     <span>👤 {post.author}</span>
                   </div>
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800 transition"
+                    className="inline-block mt-4 text-blue-600 font-semibold hover:text-black transition"
                   >
                     Read More →
                   </Link>
@@ -134,14 +137,14 @@ export default function Home() {
                   <span className="text-gray-500">Next Article Coming Soon</span>
                 </div>
                 <div className="p-6">
-                  <div className="text-sm text-gray-400 font-semibold mb-2">COMING SOON</div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-600">
+                  <div className="text-sm text-gray-600 font-semibold mb-2">COMING SOON</div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-700">
                     {index === 0 ? "Emergency Fund Secrets" : 
                      index === 1 ? "Debt Payoff Strategies" : "Investment Basics"}
                   </h3>
-                  <p className="text-gray-500 mb-4">We're working on more amazing content for you!</p>
-                  <div className="flex items-center text-sm text-gray-400">
-                    <span className="mr-4">⏱️ Coming soon</span>
+                  <p className="text-gray-500 mb-4">We&apos;re working on more amazing content for you!</p>
+                  <div className="flex items-center text-xs text-gray-500">
+                    <span className="mr-3">⏱️ Coming soon</span>
                     <span>👤 Smart Money Team</span>
                   </div>
                 </div>
@@ -164,7 +167,7 @@ export default function Home() {
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <button className="bg-yellow-500 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
               Get Free Tips
@@ -216,7 +219,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Smart Money Moves. All rights reserved.</p>
+            <p className="text-gray-300">&copy; 2024 Smart Money Moves. All rights reserved.</p>
           </div>
         </div>
       </footer>

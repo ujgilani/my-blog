@@ -1,0 +1,5 @@
+# Block all crawlers for dev environments
+User-agent: *
+Disallow:
+
+Sitemap: https://your-domain.com/sitemap.xml
