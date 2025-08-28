@@ -14,12 +14,12 @@ const getHighlightColor = (questionId: keyof Answers, answer: string) => {
 export default function ResultsClient() {
   const searchParams = useSearchParams();
   const answers: Answers = {
-    q1: searchParams.get('q1') || undefined,
-    q2: searchParams.get('q2') || undefined,
-    q3: searchParams.get('q3') || undefined,
-    q4: searchParams.get('q4') || undefined,
-    q5: searchParams.get('q5') || undefined,
-    q6: searchParams.get('q6') || undefined,
+    q1: searchParams?.get('q1') || undefined,
+    q2: searchParams?.get('q2') || undefined,
+    q3: searchParams?.get('q3') || undefined,
+    q4: searchParams?.get('q4') || undefined,
+    q5: searchParams?.get('q5') || undefined,
+    q6: searchParams?.get('q6') || undefined,
   };
 
   const result = calculateResult(answers);
