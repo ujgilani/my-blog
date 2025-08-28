@@ -8,6 +8,8 @@ type Props = {
   className?: string;
 }
 
+const DEFAULT_AD_CLIENT = 'ca-pub-1464077647333198'
+
 export default function AdSenseAd({ adClient, adSlot, style, className }: Props) {
   useEffect(() => {
     try {
@@ -22,7 +24,7 @@ export default function AdSenseAd({ adClient, adSlot, style, className }: Props)
     <div className={className} style={{ width: '100%', textAlign: 'center' }}>
       <ins className="adsbygoogle"
         style={style ? JSON.parse(style) : { display: 'block' }}
-        data-ad-client={adClient || undefined}
+        data-ad-client={adClient || DEFAULT_AD_CLIENT}
         data-ad-slot={adSlot}
         data-ad-format="auto"
         data-full-width-responsive="true"

@@ -64,7 +64,7 @@ export default function Home() {
       {/* Ad Section Below Hero */}
       <section className="py-8 bg-gray-100 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <AdSenseAd adSlot="REPLACE_WITH_SLOT_ID_1" />
+          <AdSenseAd adSlot="5634876494" />
         </div>
       </section>
 
@@ -97,7 +97,7 @@ export default function Home() {
       {/* Ad Section Between Problem Statement and Latest Articles */}
       <section className="py-8 bg-gray-100 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <AdSenseAd adSlot="REPLACE_WITH_SLOT_ID_2" />
+          <AdSenseAd adSlot="7417929120" />
         </div>
       </section>
 
@@ -172,7 +172,7 @@ export default function Home() {
       {/* Ad Section Above Footer */}
       <section className="py-8 bg-gray-100 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <AdSenseAd adSlot="REPLACE_WITH_SLOT_ID_3" />
+          <AdSenseAd adSlot="1256647781" />
         </div>
       </section>
 
