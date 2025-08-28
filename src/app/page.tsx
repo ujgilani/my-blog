@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { getSortedPostsData } from '@/lib/blog'
+import AdSenseAd from '@/components/AdSenseAd'
 
 export default function Home() {
   // Get your blog posts
@@ -63,7 +64,7 @@ export default function Home() {
       {/* Ad Section Below Hero */}
       <section className="py-8 bg-gray-100 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-gray-600">[Ad Placeholder] Your Ad Here</p>
+          <AdSenseAd adSlot="REPLACE_WITH_SLOT_ID_1" />
         </div>
       </section>
 
@@ -96,7 +97,7 @@ export default function Home() {
       {/* Ad Section Between Problem Statement and Latest Articles */}
       <section className="py-8 bg-gray-100 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-gray-600">[Ad Placeholder] Your Ad Here</p>
+          <AdSenseAd adSlot="REPLACE_WITH_SLOT_ID_2" />
         </div>
       </section>
 
@@ -171,7 +172,7 @@ export default function Home() {
       {/* Ad Section Above Footer */}
       <section className="py-8 bg-gray-100 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-gray-600">[Ad Placeholder] Your Ad Here</p>
+          <AdSenseAd adSlot="REPLACE_WITH_SLOT_ID_3" />
         </div>
       </section>
 
